@@ -90,7 +90,7 @@ const start = () => {
 
   pintarJugadores();
 
-  document.addEventListener("keydown", pegar);
+  document.addEventListener("keyup", pegar);
 };
 
 const pintarJugadores = () => {
