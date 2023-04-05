@@ -118,6 +118,7 @@ const pintarJugadores = () => {
       imgPlayer$$.src = JUGADOR1.imagen;
       imgPlayer$$.className = "jugador1-imagen"
       combate$$.appendChild(jugador$$);
+      vida$$.textContent = JUGADOR1.vida;
       const vs$$ = document.createElement("img");
       vs$$.className = "vs"
       vs$$.src =
@@ -125,6 +126,7 @@ const pintarJugadores = () => {
       combate$$.appendChild(vs$$);
     } else {
       imgPlayer$$.src = JUGADOR2.imagen;
+      vida$$.textContent = JUGADOR2.vida;
       imgPlayer$$.className = "jugador2-imagen"
       combate$$.appendChild(jugador$$);
     }
@@ -152,6 +154,7 @@ const pegar = (e) => {
 
     if (vidaResultante <= 0) {
       barrita2$$.setAttribute("style", `width: 0%`);
+      barrita2$$.textContent = 0;
       setTimeout(() => {
         alert("El jugador 1 ha ganado");
       }, 500);
@@ -160,6 +163,7 @@ const pegar = (e) => {
       start$$.setAttribute("disabled", "false"); */
     } else {
       const porcentaje = (vidaResultante / VIDAJ2) * 100;
+      barrita2$$.textContent = vidaResultante;
       JUGADOR2.vida = vidaResultante;
       barrita2$$.setAttribute("style", `width: ${porcentaje}%`);
     }
@@ -170,6 +174,7 @@ const pegar = (e) => {
 
     if (vidaResultante <= 0) {
       barrita1$$.setAttribute("style", `width: 0%`);
+      barrita1$$.textContent = 0;
       setTimeout(() => {
         alert("El jugador 2 ha ganado");
       }, 500);
@@ -178,6 +183,7 @@ const pegar = (e) => {
       start$$.setAttribute("disabled", "false"); */
     } else {
       const porcentaje = (vidaResultante / VIDAJ1) * 100;
+      barrita1$$.textContent = vidaResultante;
       JUGADOR1.vida = vidaResultante;
       barrita1$$.setAttribute("style", `width: ${porcentaje}%`);
     }
