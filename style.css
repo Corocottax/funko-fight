@@ -24,7 +24,7 @@ body {
 .funko {
   padding: 30px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 3px solid black;
   width: 400px;
   display: flex;
   justify-content: center;
